@@ -26,7 +26,19 @@ module.exports = {
                             loader: "css-loader",
                             options: {
                                 minimize: process.env.NODE_ENV == "production" ? true : false,
-                                sourceMap: true
+                                sourceMap: true,
+                                importLoaders: 1
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: "inline",
+                                config: {
+                                    ctx: {
+                                        autoprefixer: { browsers: ["last 2 versions", "iOS >=8"] }
+                                    }
+                                }
                             }
                         },
                         {
@@ -45,7 +57,19 @@ module.exports = {
                             loader: "css-loader",
                             options: {
                                 minimize: process.env.NODE_ENV == "production" ? true : false,
-                                sourceMap: true
+                                sourceMap: true,
+                                importLoaders: 1
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: "inline",
+                                config: {
+                                    ctx: {
+                                        autoprefixer: { browsers: ["last 2 versions", "iOS >=8"] }
+                                    }
+                                }
                             }
                         }
                     ]
