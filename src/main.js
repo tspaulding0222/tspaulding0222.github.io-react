@@ -1,12 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Hello from './components/Hello';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./reducers";
+import Unsplash from 'unsplash-js';
 
-import style from './styles/Main.scss'
+import Home from "./components/Home";
+import UnsplashImage from "./components/UnsplashImage";
+import style from "./styles/Main.scss";
 
-const title = 'My Minimal React Webpack Babel Setup';
+const unsplashAuth = new Unsplash({
+    applicationId: "e0ab8e6db30140922270dbbbae440d167e44572cfc92bc43e3cb2727ec0bf014",
+    secret: "904e40c14db17202d6048d5dcf1c97f3821904bf5d840c8aee613f379c8055b8",
+    callbackUrl: "/",
+    headers: {
+        "Authorization": "Client-ID e0ab8e6db30140922270dbbbae440d167e44572cfc92bc43e3cb2727ec0bf014"
+    }
+});
+
+const store = createStore(rootReducer);
+store.dispatch({
+    type: "SET_UNSPLASH",
+    object: unsplashAuth
+});
 
 ReactDOM.render(
-  <Hello></Hello>,
-  document.getElementById('app')
+	<Provider store={store}>
+		<Router>
+			<div>
+				<Route exact path="/" component={Home} />
+				<Route path="/image" component={UnsplashImage} />
+			</div>
+		</Router>
+	</Provider>,
+	document.getElementById("app")
 );
