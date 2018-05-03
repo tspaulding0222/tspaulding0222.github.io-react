@@ -1,0 +1,49 @@
+.unsplash-img-container {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.unsplash-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.unsplash-image-header {
+    color: white;
+    h2,
+    h3 {
+        text-align: center;
+    }
+}
+
+.no-unsplash-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    .epic-fail-word {
+        font-size: 5em;
+        font-weight: 900;
+        letter-spacing: 10px;
+        color: white;
+        text-align: center;
+    }
+    @for $i from 1 to 10 {
+        span:nth-child(#{$i}) {
+            animation: blur-text 1.5s (#{$i/5}s) linear alternate infinite;
+        }
+    }
+}
+
+@keyframes blur-text {
+    0% {
+        filter: blur(1px);
+    }
+    100% {
+        filter: blur(5px);
+    }
+}

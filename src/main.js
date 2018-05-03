@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { AnimatedSwitch } from 'react-router-transition';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./reducers";
@@ -28,10 +29,15 @@ store.dispatch({
 ReactDOM.render(
 	<Provider store={store}>
 		<Router>
-			<div>
+			<AnimatedSwitch
+                atEnter={{ opacity: 0 }}
+                atLeave={{ opacity: 0 }}
+                atActive={{ opacity: 1 }}
+                className="switch-wrapper"
+            >
 				<Route exact path="/" component={Home} />
 				<Route path="/image" component={UnsplashImage} />
-			</div>
+			</AnimatedSwitch>
 		</Router>
 	</Provider>,
 	document.getElementById("app")

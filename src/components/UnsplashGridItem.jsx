@@ -7,6 +7,10 @@ class UnsplashGridItem extends React.Component {
         super(props);
         this.imgRef = React.createRef();
         this.itemRef = React.createRef();
+        this.imagePush = {
+            pathname: '/image',
+            state: this.props.data
+        }
     }
 
     componentDidMount() {
@@ -28,7 +32,7 @@ class UnsplashGridItem extends React.Component {
 
     render() {
         return (
-            <div ref={this.itemRef} className="unsplash-grid-item" onClick={() => {this.props.history.push("/image")}}>
+            <div ref={this.itemRef} className="unsplash-grid-item" onClick={() => {this.props.history.push(this.imagePush)}}>
                 <div className="unsplash-grid-item-img-container">
                     <img ref={this.imgRef} src={this.props.data.urls.regular} />
                 </div>
