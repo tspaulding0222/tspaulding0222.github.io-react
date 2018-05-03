@@ -35,7 +35,7 @@ ReactDOM.render(
                 atActive={{ opacity: 1 }}
                 className="switch-wrapper"
             >
-				<Route exact path="/" component={Home} />
+				<Route path="/" component={Home} />
 				<Route path="/image" component={UnsplashImage} />
 			</AnimatedSwitch>
 		</Router>
