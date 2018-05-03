@@ -28,7 +28,7 @@ store.dispatch({
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router>
+		<Router basename="/tspaulding0222.github.io-react">
 			<AnimatedSwitch
                 atEnter={{ opacity: 0 }}
                 atLeave={{ opacity: 0 }}
