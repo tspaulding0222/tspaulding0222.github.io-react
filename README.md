@@ -1,4 +1,4 @@
-# tspaulding0222.github.io/tspaulding0222.github.io-react/
+# Example React App
 
 ## Links
 [React](https://reactjs.org/)
