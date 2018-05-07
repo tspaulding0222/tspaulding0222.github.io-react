@@ -1,11 +1,11 @@
 # Example React App
 
 ## Links
-[React](https://reactjs.org/)
-[Redux Tutorial by CSSTricks](https://css-tricks.com/learning-react-redux/)
-[React Router](https://reacttraining.com/react-router/core/guides/philosophy)
-[PostCSS](http://postcss.org/)
-[Babel](https://babeljs.io/)
+* [React](https://reactjs.org/)
+* [Redux Tutorial by CSSTricks](https://css-tricks.com/learning-react-redux/)
+* [React Router](https://reacttraining.com/react-router/core/guides/philosophy)
+* [PostCSS](http://postcss.org/)
+* [Babel](https://babeljs.io/)
 
 ## Why?
 To provide and create an example react app. 
